@@ -34,7 +34,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.AddressBook">
+  <component name="RunManager" selected="Application.AddressBookSystem">
     <configuration name="AddressBook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.AddressBook" />
       <module name="address-book-system" />
@@ -63,8 +63,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AddressBook" />
         <item itemvalue="Application.AddressBookSystem" />
+        <item itemvalue="Application.AddressBook" />
       </list>
     </recent_temporary>
   </component>
