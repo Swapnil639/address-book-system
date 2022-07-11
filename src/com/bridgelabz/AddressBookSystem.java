@@ -7,6 +7,7 @@ public class AddressBookSystem {
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Contact> addressBook = new ArrayList<Contact>();
 
+    // main method
     public static void main(String[] args) {
         System.out.println("Welcome to the Address Book Problem");
         AddressBookSystem addressBookList = new AddressBookSystem();
@@ -14,7 +15,7 @@ public class AddressBookSystem {
         boolean condition = true;
 
         while (condition == true) {
-            System.out.println("1.AddContact" + "\n" + "2.EditContact" + "\n" + "3.DeleteContact" + "\n" + "4.AddMultipleContact" + "\n" + "5.ShowAddressBookDetails");
+            System.out.println("1.AddContact" + "\n" + "2.EditContact" + "\n" + "3.DeleteContact" + "\n" + "4.AddMultipleContact" + "\n" + "5.ShowAddressBookDetails" + "\n" + "6.SearchContactDetails");
             int option = scanner.nextInt();
 
             switch (option) {
@@ -33,12 +34,16 @@ public class AddressBookSystem {
                 case 5:
                     addressBookList.showAddressBookDetails();
                     break;
+                case 6:
+                    addressBookList.searchContactDetails();
+                    break;
                 default:
                     System.out.println("Invalid Input");
             }
         }
     }
 
+    // Method to add contact
     public void addContactDetails() {
         Contact details = new Contact();
         System.out.println("Enter a first name:");
@@ -63,6 +68,7 @@ public class AddressBookSystem {
         System.out.println("successfully added new contacts");
     }
 
+    // Method to edit contact
     public void editContactDetails() {
         System.out.println("enter a name for edit:");
         String editName = scanner.next();
@@ -116,6 +122,7 @@ public class AddressBookSystem {
         }
     }
 
+    // Method to delete contact
     public void deleteContact() {
         System.out.println("confirm the name to delete contact");
         String confirmName = scanner.next();
@@ -127,6 +134,7 @@ public class AddressBookSystem {
         System.out.println(addressBook);
     }
 
+    // Method to add multiple contact
     public void addMultipleContact() {
         System.out.println("Enter Number of Contacts to Add into Contact Book");
         int number = scanner.nextInt();
@@ -136,12 +144,24 @@ public class AddressBookSystem {
         }
     }
 
+    // Method to display contact details
     public void showAddressBookDetails() {
         if (addressBook.isEmpty()) {
             System.out.println("Address book is empty");
         } else {
             Set<Contact> set = addressBook.stream().collect(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Contact::toString))));
             set.forEach(System.out::println);
+        }
+    }
+
+    //  Method to search contact details
+    public void searchContactDetails() {
+        System.out.println("Enter the city or state to search Contact ");
+        String input = scanner.next();
+        for (Contact person : addressBook) {
+            if (person.getCity().equals(input) || person.getState().equals(input)) {
+                System.out.println("Matches with city and state name contact is :" + person);
+            }
         }
     }
 }
