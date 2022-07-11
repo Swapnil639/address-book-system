@@ -8,7 +8,7 @@ public class AddressBook {
     static Map<String, AddressBookSystem> addressBookSystemMap = new HashMap<>();
     static Scanner scanner = new Scanner(System.in);
 
-    // Main method
+
     public static void main(String[] args) {
         System.out.println("Welcome to AddressBook program");
 
@@ -44,7 +44,7 @@ public class AddressBook {
         }
     }
 
-    // Method to add new address book
+
     public static void addNewAddressBook() {
         System.out.println("Enter the name of new address book");
         String bookName = scanner.next();
@@ -59,7 +59,7 @@ public class AddressBook {
         }
     }
 
-    // Method to add contact
+
     public static void addContact() {
         System.out.println("Enter the name of address book to add contact");
         String bookName = scanner.next();
@@ -72,7 +72,7 @@ public class AddressBook {
         }
     }
 
-    // Method to edit contact
+
     public static void editContact() {
         System.out.println("Enter the name of address book edit ");
         String bookName = scanner.next();
@@ -85,7 +85,7 @@ public class AddressBook {
         }
     }
 
-    // Method to delete contact
+
     public static void deleteContact() {
         System.out.println("Enter the name of address book to delete contact");
         String bookName = scanner.next();
@@ -98,7 +98,7 @@ public class AddressBook {
         }
     }
 
-    // Method to add multiple contacts
+
     public static void addMultipleContact() {
         System.out.println("Enter the address book name to add multiple contact");
         String bookName = scanner.next();
@@ -111,7 +111,7 @@ public class AddressBook {
         }
     }
 
-    // Method to display the address book details
+
     public static void showAddressBookDetails() {
         System.out.println("Enter Address Book System Name");
         String bookName = scanner.next();
@@ -124,7 +124,7 @@ public class AddressBook {
         }
     }
 
-    // Method to search contact by city or state
+
     public static void searchByCityOrState() {
         System.out.println("Enter the AddressBookName ");
         String bookName = scanner.next();
