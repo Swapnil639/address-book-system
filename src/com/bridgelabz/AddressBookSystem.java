@@ -7,7 +7,7 @@ public class AddressBookSystem {
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Contact> addressBook = new ArrayList<Contact>();
 
-
+    // main method
     public static void main(String[] args) {
         System.out.println("Welcome to the Address Book Problem");
         AddressBookSystem addressBookList = new AddressBookSystem();
@@ -43,7 +43,7 @@ public class AddressBookSystem {
         }
     }
 
-
+    // Method to add contact
     public void addContactDetails() {
         Contact details = new Contact();
         System.out.println("Enter a first name:");
@@ -68,7 +68,7 @@ public class AddressBookSystem {
         System.out.println("successfully added new contacts");
     }
 
-
+    // Method to edit contact
     public void editContactDetails() {
         System.out.println("enter a name for edit:");
         String editName = scanner.next();
@@ -122,7 +122,7 @@ public class AddressBookSystem {
         }
     }
 
-
+    // Method to delete contact
     public void deleteContact() {
         System.out.println("confirm the name to delete contact");
         String confirmName = scanner.next();
@@ -134,7 +134,7 @@ public class AddressBookSystem {
         System.out.println(addressBook);
     }
 
-
+    // Method to add multiple contact
     public void addMultipleContact() {
         System.out.println("Enter Number of Contacts to Add into Contact Book");
         int number = scanner.nextInt();
@@ -144,7 +144,7 @@ public class AddressBookSystem {
         }
     }
 
-
+    // Method to display contact details
     public void showAddressBookDetails() {
         if (addressBook.isEmpty()) {
             System.out.println("Address book is empty");
@@ -154,7 +154,7 @@ public class AddressBookSystem {
         }
     }
 
-
+    //  Method to search contact details
     public void searchContactDetails() {
         System.out.println("Enter the city or state to search Contact ");
         String input = scanner.next();
@@ -164,5 +164,15 @@ public class AddressBookSystem {
             }
         }
     }
-}
+
+    // Method to sort person by method
+    public void sortByPersonName(){
+        if (addressBook.isEmpty()) {
+            System.out.println("Contact book is empty");
+        } else {
+            addressBook.stream().sorted(Comparator.comparing(Contact::getFirstName)).forEach(System.out::println);
+            }
+        }
+    }
+
 

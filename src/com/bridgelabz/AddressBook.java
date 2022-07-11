@@ -7,14 +7,15 @@ import java.util.Scanner;
 public class AddressBook {
     static Map<String, AddressBookSystem> addressBookSystemMap = new HashMap<>();
     static Scanner scanner = new Scanner(System.in);
+    static AddressBookSystem addressBook = new AddressBookSystem();
 
-
+    // Main method
     public static void main(String[] args) {
         System.out.println("Welcome to AddressBook program");
 
         boolean condition = true;
         while (condition) {
-            System.out.println("\n" + "1.AddNewAddressBook" + "\n" + "2.AddContact" + "\n" + "3.EditContact" + "\n" + "4.DeleteContact" + "\n" + "5.AddMultipleContact" + "\n" + "6.ShowAddressBookDetails" + "\n" + "7.SearchContactByCityOrState");
+            System.out.println("\n" + "1.AddNewAddressBook" + "\n" + "2.AddContact" + "\n" + "3.EditContact" + "\n" + "4.DeleteContact" + "\n" + "5.AddMultipleContact" + "\n" + "6.ShowAddressBookDetails" + "\n" + "7.SearchContactByCityOrState" + "\n" + "8.SortContactByName");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -38,13 +39,16 @@ public class AddressBook {
                 case 7:
                     searchByCityOrState();
                     break;
+                case 8:
+                    sortByPersonName();
+                    break;
                 default:
                     System.out.println("Exit");
             }
         }
     }
 
-
+    // Method to add new address book
     public static void addNewAddressBook() {
         System.out.println("Enter the name of new address book");
         String bookName = scanner.next();
@@ -59,7 +63,7 @@ public class AddressBook {
         }
     }
 
-
+    // Method to add contact
     public static void addContact() {
         System.out.println("Enter the name of address book to add contact");
         String bookName = scanner.next();
@@ -72,7 +76,7 @@ public class AddressBook {
         }
     }
 
-
+    // Method to edit contact
     public static void editContact() {
         System.out.println("Enter the name of address book edit ");
         String bookName = scanner.next();
@@ -85,7 +89,7 @@ public class AddressBook {
         }
     }
 
-
+    // Method to delete contact
     public static void deleteContact() {
         System.out.println("Enter the name of address book to delete contact");
         String bookName = scanner.next();
@@ -98,7 +102,7 @@ public class AddressBook {
         }
     }
 
-
+    // Method to add multiple contacts
     public static void addMultipleContact() {
         System.out.println("Enter the address book name to add multiple contact");
         String bookName = scanner.next();
@@ -111,7 +115,7 @@ public class AddressBook {
         }
     }
 
-
+    // Method to display the address book details
     public static void showAddressBookDetails() {
         System.out.println("Enter Address Book System Name");
         String bookName = scanner.next();
@@ -124,7 +128,7 @@ public class AddressBook {
         }
     }
 
-
+    // Method to search contact by city or state
     public static void searchByCityOrState() {
         System.out.println("Enter the AddressBookName ");
         String bookName = scanner.next();
@@ -134,6 +138,18 @@ public class AddressBook {
             System.out.println("No book found with these name");
         } else {
             addressBookSystem.searchContactDetails();
+        }
+    }
+
+    // Method to sort contact by person name
+    public static void sortByPersonName() {
+        System.out.println("Enter the AddressBookName ");
+        String bookName = scanner.next();
+        AddressBookSystem book = addressBookSystemMap.get(bookName);
+        if (book == null) {
+            System.out.println("No book found with these name");
+        } else {
+            addressBook.sortByPersonName();
         }
     }
 }
