@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ed2bcd4-8ec7-4cd6-a131-5329a1db1bdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/bridgelabz/AddressBookSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bridgelabz/AddressBookSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bridgelabz/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bridgelabz/Contact.java" afterDir="false" />
-    </list>
+    <list default="true" id="5ed2bcd4-8ec7-4cd6-a131-5329a1db1bdc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

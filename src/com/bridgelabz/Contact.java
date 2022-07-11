@@ -10,17 +10,18 @@ public class Contact {
     private long phoneNumber;
     private String email;
 
-    public Contact(String firstName, String lastName, String address, String city, String state, int zip, long phoneNumber, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+    Contact(String firstName, String lastName, String address, String city, String state, int zip, long phoneNumber, String email) {
+        this.setFirstName(this.firstName);
+        this.setLastName(this.lastName);
+        this.setAddress(this.address);
+        this.setCity(this.city);
+        this.setState(this.state);
+        this.setZip(this.zip);
+        this.setPhoneNumber(this.phoneNumber);
+        this.setEmail(this.email);
     }
-    public Contact(){
+
+    public Contact() {
 
     }
 
@@ -87,4 +88,32 @@ public class Contact {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Contact(String firstName2, String lastName2, String address2, String city2, String state2, String email2,
+                   int zip2, long phoneNumber2) {
+        this.firstName=firstName2;
+        this.lastName=lastName2;
+        this.address=address2;
+        this.city=city2;
+        this.state=state2;
+        this.zip=zip2;
+        this.phoneNumber=phoneNumber2;
+        this.email=email2;
+        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip=" + zip +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
+
